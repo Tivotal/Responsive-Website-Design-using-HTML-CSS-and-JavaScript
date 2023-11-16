@@ -1,0 +1,192 @@
+/* Created by Tivotal */
+
+/* Google Fonts(font awesome) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: url(bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 5%;
+  color: #fff;
+}
+
+.header .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: auto;
+}
+
+.header .nav {
+  display: flex;
+  align-items: center;
+}
+
+.header .nav .menu {
+  display: flex;
+  align-items: center;
+}
+
+.header .nav .menu li a {
+  position: relative;
+  margin-left: 40px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  transition: 0.4s;
+}
+
+.header .nav .menu li a:hover {
+  color: #222;
+}
+
+.header .nav .toggleBtn {
+  font-size: 1.3rem;
+  margin-left: 80px;
+  cursor: pointer;
+  display: none;
+}
+
+.home {
+  padding: 0 5%;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.home h1 {
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideDown 0.8s linear forwards;
+}
+
+.home p {
+  font-size: 0.8rem;
+  width: 600px;
+  font-weight: 300;
+  margin: -5px auto 25px;
+  text-align: center;
+  opacity: 0;
+  animation: slideDown 0.5s linear forwards;
+  animation-delay: 0.5s;
+}
+
+.home .btn {
+  background: #fff;
+  padding: 0.3rem 1.5rem;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.4s;
+  opacity: 0;
+  animation: slideDown 0.5s linear forwards;
+  animation-delay: 0.8s;
+}
+
+.home .btn:hover {
+  background: none;
+  border-color: #fff;
+  color: #fff;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  .home {
+    min-width: 390px;
+  }
+
+  .home h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .home p {
+    font-size: 0.6rem;
+    width: 320px;
+    font-weight: 300;
+    margin: 0 auto 20px;
+  }
+
+  .home .btn {
+    padding: 0.25rem 1.1rem;
+    font-size: 0.75rem;
+  }
+
+  .header .nav .toggleBtn {
+    display: block;
+  }
+
+  .header .nav .menu {
+    position: absolute;
+    left: -100%;
+    top: 110px;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 80px;
+    background: #222;
+    height: calc(100% - 110px);
+    width: 100%;
+    z-index: 10;
+    transition: 0.4s;
+  }
+
+  .header.active .nav .menu {
+    left: 0;
+  }
+
+  .header .nav .menu li a {
+    display: block;
+    margin-left: unset;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 5px;
+    transition: 0.4s;
+  }
+
+  .header .nav .menu li a:hover {
+    background: #fff;
+  }
+}
